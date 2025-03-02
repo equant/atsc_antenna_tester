@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-01b92d76c0e919a58e3bd8bd8e04a297"}, "facet": {"column": {"field": "antenna", "title": "Antenna", "type": "nominal"}}, "spec": {"mark": {"type": "line", "point": true}, "encoding": {"tooltip": [{"field": "antenna", "type": "nominal"}, {"field": "scan_time", "type": "temporal"}, {"field": "median_snr", "type": "quantitative"}, {"field": "count", "type": "quantitative"}], "x": {"field": "scan_time", "title": "Scan Time (15-min bins)", "type": "temporal"}, "y": {"field": "median_snr", "title": "Median SNR (dB)", "type": "quantitative"}}}, "title": "Scan-to-Scan Variability in SNR for Each Antenna", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-01b92d76c0e919a58e3bd8bd8e04a297": [{"antenna": "ChannelMaster Flat", "scan_time": "2025-03-02T09:15:00", "median_snr": 2.619540977882746, "count": 32}, {"antenna": "ChannelMaster Flat", "scan_time": "2025-03-02T09:30:00", "median_snr": 3.3800389928626444, "count": 48}, {"antenna": "CheapoFlat", "scan_time": "2025-03-02T08:15:00", "median_snr": 2.769822710670944, "count": 16}, {"antenna": "CheapoFlat", "scan_time": "2025-03-02T08:30:00", "median_snr": 2.276095232681417, "count": 16}, {"antenna": "CheapoFlat", "scan_time": "2025-03-02T09:00:00", "median_snr": 3.231178873102948, "count": 32}, {"antenna": "CheapoFlat", "scan_time": "2025-03-02T09:15:00", "median_snr": 3.114505055811048, "count": 16}, {"antenna": "Philips Rabbit Ears", "scan_time": "2025-02-23T13:30:00", "median_snr": 4.055224334072619, "count": 48}, {"antenna": "Philips Rabbit Ears", "scan_time": "2025-02-24T09:15:00", "median_snr": 4.447041692072137, "count": 16}, {"antenna": "Philips Rabbit Ears", "scan_time": "2025-03-02T06:30:00", "median_snr": 3.069778532277139, "count": 16}, {"antenna": "Philips Rabbit Ears", "scan_time": "2025-03-02T07:15:00", "median_snr": 3.632010764273943, "count": 16}, {"antenna": "Philips Rabbit Ears", "scan_time": "2025-03-02T07:30:00", "median_snr": 3.2496011477917115, "count": 32}, {"antenna": "Philips Rabbit Ears", "scan_time": "2025-03-02T07:45:00", "median_snr": 4.3739310811404835, "count": 16}, {"antenna": "Philips Rabbit Ears", "scan_time": "2025-03-02T08:15:00", "median_snr": 2.127899559178273, "count": 16}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
