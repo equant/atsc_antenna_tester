@@ -66,9 +66,9 @@ def main(stdscr):
     # https://transition.fcc.gov/fcc-bin/tvq?call=&filenumber=&state=AZ&city=Tucson&chan=0&cha2=36&serv=&status=&facid=&asrn=&list=4&dist=&dlat2=&mlat2=&slat2=&NS=N&dlon2=&mlon2=&slon2=&EW=W&size=9&NextTab=Results+to+Next+Page%2FTab
     fcc_url = "https://transition.fcc.gov/fcc-bin/tvq?call=&filenumber=&state=AZ&city=Tucson&chan=0&cha2=36&list=4&NS=N&9"
 
-    fcc_url = ("https://transition.fcc.gov/fcc-bin/tvq?call=&filenumber=&state=AZ&city=Tucson&chan=0&"
-           "cha2=36&serv=&status=&facid=&asrn=&list=4&dist=&dlat2=&mlat2=&slat2=&NS=N&"
-           "dlon2=&mlon2=&slon2=&EW=W&size=9&NextTab=Results+to+Next+Page%2FTab")
+    #fcc_url = ("https://transition.fcc.gov/fcc-bin/tvq?call=&filenumber=&state=AZ&city=Tucson&chan=0&"
+           #"cha2=36&serv=&status=&facid=&asrn=&list=4&dist=&dlat2=&mlat2=&slat2=&NS=N&"
+           #"dlon2=&mlon2=&slon2=&EW=W&size=9&NextTab=Results+to+Next+Page%2FTab")
 
     response = requests.get(fcc_url)
     raw_text = response.text
